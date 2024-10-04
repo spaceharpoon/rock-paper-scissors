@@ -1,6 +1,6 @@
 # Rock Paper Scissors
 
-The ultimate game of rock paper scissors on farcaster frames.
+The ultimate game of rock paper scissors on farcaster frames
 
 ## Architecture
 
@@ -8,11 +8,9 @@ The ultimate game of rock paper scissors on farcaster frames.
 
 ## Working
 
-* The game creator would create a link to the game on our website and get a link to post on farcaster frames
+* Creators can visit our website to create a game. A link is generated for users to create a post
 
-* Once the game creator creates a post on farcaster, the frame would be rendered for all users to play
+* Once the creator posts a game, other users or followers can play the game against the creator
 
-* Other users can directly play on farcaster
-
-* Once the game creator decides to reveal the game, the original post will only show the results and the option to play will disappear
+* The creator can reveal the game at any point, and the original post will display the results
 
