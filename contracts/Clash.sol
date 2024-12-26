@@ -49,10 +49,13 @@ contract Clash {
     }
 
     function play(uint128 gameId, Move move) public {
+        require(move != Move.Unrevealed, "Pick a valid move!");
         Game storage game = games[gameId];
 
         address opponent = msg.sender;
+
         require(opponent != game.creator, "You cannot play against yourself!");
+        require(game.opponentMoves[opponent] == Move.Unrevealed, "You cannot play twice!");
 
         game.opponents.push(opponent);
         game.opponentMoves[opponent] = move;
@@ -61,6 +64,8 @@ contract Clash {
     }
 
     function reveal(uint128 gameId, Move move, uint256 secret) public {
+        require(move != Move.Unrevealed, "Pick a valid move!");
+        
         Game storage game = games[gameId];
         bytes32 claimedCommitment = keccak256(abi.encodePacked(move, secret));
         
