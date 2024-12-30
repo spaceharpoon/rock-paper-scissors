@@ -93,6 +93,8 @@ contract Clash {
 
     function getGameResults(uint128 gameId) public view returns (address[] memory, bool[] memory) {
         Game storage game = games[gameId];
+
+        require(game.revealed, "Game is not revealed!");
         
         address[] memory opponents = new address[](game.opponents.length);
         bool[] memory playerWins = new bool[](game.opponents.length);
